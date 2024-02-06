@@ -1,0 +1,36 @@
+:root {
+  @apply font-body font-300 leading-[1.5];
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-head font-800 uppercase;
+}
+
+h1 {
+  @apply text-[2.5rem];
+}
+
+h2 {
+  @apply text-[2rem];
+}
+
+h3 {
+  @apply text-[1.5rem];
+}
+
+em,
+strong {
+  @apply font-600;
+}
+
+a {
+}
+
+button {
+  @apply font-inherit font-600 text-size-inherit py-3 px-5 cursor-pointer bg-black text-white b-none rounded;
+}

@@ -12,6 +12,8 @@ export default {
     presetWebFonts({
       provider: 'google',
       fonts: {
+        head: 'M PLUS 1:800',
+        body: 'Archivo:300,600',
         mono: 'Fira Code:400,700',
       },
     }),
