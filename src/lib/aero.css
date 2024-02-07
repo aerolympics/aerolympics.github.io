@@ -1,5 +1,12 @@
 :root {
-  @apply font-body font-300 leading-[1.5];
+  @apply font-body font-300 leading-[1.5] text-light-fg;
+  @apply @dark:text-dark-fg;
+}
+
+html,
+body {
+  @apply bg-light-bg;
+  @apply @dark:bg-dark-bg;
 }
 
 h1,
@@ -29,8 +36,21 @@ strong {
 }
 
 a {
+  @apply text-light-a transition-color;
+  @apply @dark:text-dark-a;
+}
+
+a:hover {
+  @apply text-light-a/80;
+  @apply @dark:text-dark-a/80;
 }
 
 button {
-  @apply font-inherit font-600 text-size-inherit py-3 px-5 cursor-pointer bg-black text-white b-none rounded;
+  @apply font-inherit font-600 text-size-inherit py-3 px-5 cursor-pointer bg-light-a text-light-bg b-none rounded transition-colors;
+  @apply @dark:bg-transparent @dark:text-dark-a @dark:b-dark-a @dark:b-solid;
+}
+
+button:hover {
+  @apply bg-light-a/80;
+  @apply @dark:bg-dark-a @dark:text-dark-bg @dark:b-dark-a @dark:b-solid;
 }

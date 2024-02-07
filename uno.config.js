@@ -31,4 +31,22 @@ export default {
     [/^ofade-([\d]*)$/, ([, c]) => `transition-opacity duration-${c}`],
   ],
   extractors: [extractorSvelte],
+  theme: {
+    colors: {
+      light: {
+        bg: '#FCFFFC',
+        fg: '#000000',
+        a: '#2B59C3',
+        b: '#F75590',
+        c: '#13C4A3',
+      },
+      dark: {
+        bg: '#000000',
+        fg: '#FCFFFC',
+        a: '#F75590',
+        b: '#2B59C3',
+        c: '#13C4A3',
+      },
+    },
+  },
 }
