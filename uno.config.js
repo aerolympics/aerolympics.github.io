@@ -7,30 +7,6 @@ import {
 } from 'unocss'
 
 export default {
-  presets: [
-    presetUno(),
-    presetWebFonts({
-      provider: 'google',
-      fonts: {
-        head: 'M PLUS 1:800',
-        body: 'Archivo:300,600',
-        mono: 'Fira Code:400,700',
-      },
-    }),
-  ],
-  transformers: [transformerDirectives(), transformerVariantGroup()],
-  safelist: ['aspect-video', 'aspect-portrait', 'aspect-square'],
-  rules: [],
-  shortcuts: [
-    {
-      screen: 'w-screen h-screen',
-      full: 'w-full h-full',
-      'max-full': 'max-w-full max-h-full',
-      'max-screen': 'max-w-screen max-h-screen',
-    },
-    [/^ofade-([\d]*)$/, ([, c]) => `transition-opacity duration-${c}`],
-  ],
-  extractors: [extractorSvelte],
   theme: {
     colors: {
       grays: {
@@ -58,4 +34,28 @@ export default {
       },
     },
   },
+  presets: [
+    presetUno({ dark: 'class' }),
+    presetWebFonts({
+      provider: 'google',
+      fonts: {
+        head: 'M PLUS 1:800',
+        body: 'Archivo:300,600',
+        mono: 'Fira Code:400,700',
+      },
+    }),
+  ],
+  transformers: [transformerDirectives(), transformerVariantGroup()],
+  safelist: ['aspect-video', 'aspect-portrait', 'aspect-square'],
+  rules: [],
+  shortcuts: [
+    {
+      screen: 'w-screen h-screen',
+      full: 'w-full h-full',
+      'max-full': 'max-w-full max-h-full',
+      'max-screen': 'max-w-screen max-h-screen',
+    },
+    [/^ofade-([\d]*)$/, ([, c]) => `transition-opacity duration-${c}`],
+  ],
+  extractors: [extractorSvelte],
 }

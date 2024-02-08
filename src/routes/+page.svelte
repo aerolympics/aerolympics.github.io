@@ -1,3 +1,7 @@
+<script>
+  import { dark } from '$lib/stores.js'
+</script>
+
 <div class="screen flex items-center justify-center">
   <div class="w-[65ch]">
     <h1>Testing Testing 123</h1>
@@ -14,7 +18,11 @@
     </p>
     <p><a href="https://google.com" target="_blank">Link</a></p>
     <div class="flex gap-4">
-      <button>Click me</button>
+      <button
+        on:click={() => {
+          $dark = !$dark
+        }}>Click me</button
+      >
       <button class="primary">Click me</button>
       <button class="secondary">Click me</button>
       <button class="accent">Click me</button>

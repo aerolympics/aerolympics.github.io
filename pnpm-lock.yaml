@@ -62,6 +62,9 @@ devDependencies:
   unocss:
     specifier: ^0.58.4
     version: 0.58.5(postcss@8.4.34)(vite@5.0.12)
+  unocss-preset-theme:
+    specifier: ^0.12.0
+    version: 0.12.0(@unocss/core@0.58.5)
   vite:
     specifier: ^5.0.3
     version: 5.0.12
@@ -3714,6 +3717,15 @@ packages:
       defu: 6.1.4
       jiti: 1.21.0
       mlly: 1.5.0
+    dev: true
+
+  /unocss-preset-theme@0.12.0(@unocss/core@0.58.5):
+    resolution: {integrity: sha512-zdK66OO7UoGts5ZP5mXH55D3Lu82EBL94+s+DH+NQemzhTyZaGIxrovFupsSlfTC4gdKCm89w6OeNac6FLIDUw==}
+    peerDependencies:
+      '@unocss/core': '>= 0.52.0'
+    dependencies:
+      '@unocss/core': 0.58.5
+      '@unocss/rule-utils': 0.58.5
     dev: true
 
   /unocss@0.58.5(postcss@8.4.34)(vite@5.0.12):
