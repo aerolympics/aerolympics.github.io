@@ -2,6 +2,10 @@
   import { dark } from '$lib/stores.js'
 </script>
 
+<svelte:head>
+  <title>Aerolympics</title>
+</svelte:head>
+
 <div class="screen flex items-center justify-center">
   <div class="w-[65ch]">
     <h1>Testing Testing 123</h1>
