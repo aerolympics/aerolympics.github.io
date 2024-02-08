@@ -12,6 +12,7 @@
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
     "@types/eslint": "8.56.0",
+    "@unocss/eslint-config": "^0.58.5",
     "@unocss/extractor-svelte": "^0.58.4",
     "@unocss/postcss": "^0.58.4",
     "@unocss/preset-mini": "^0.58.4",

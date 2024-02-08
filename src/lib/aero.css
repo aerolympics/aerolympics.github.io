@@ -1,7 +1,6 @@
 html,
 body {
-  @apply font-body font-300 leading-[1.5] bg-grays-white text-grays-800;
-  @apply dark:bg-grays-black dark:text-grays-200;
+  @apply font-body font-300 leading-[1.5] bg-bg text-fg;
 }
 
 h1,
@@ -10,8 +9,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-head font-800 uppercase text-grays-black;
-  @apply dark:text-grays-white;
+  @apply font-head font-800 uppercase text-hx;
 }
 
 h1 {
@@ -28,56 +26,45 @@ h3 {
 
 em,
 strong {
-  @apply font-600 text-grays-900;
-  @apply dark:text-grays-100;
+  @apply font-600 text-em;
 }
 
 a {
-  @apply text-light-a transition-color;
-  @apply dark:text-dark-a;
+  @apply text-a transition-opacity;
 }
 
 a:hover {
-  @apply text-light-a/80;
-  @apply dark:text-dark-a/80;
+  @apply opacity-80;
 }
 
 button {
-  @apply font-inherit font-600 text-size-inherit py-3 px-5 cursor-pointer bg-grays-900 b-grays-900 text-grays-white b-solid rounded transition-colors;
-  @apply dark:bg-grays-100 dark:b-grays-100 dark:text-black;
+  @apply font-inherit font-600 text-size-inherit py-3 px-5 cursor-pointer bg-em b-em text-bg b-solid rounded transition-colors;
 }
 
 button:hover {
-  @apply bg-transparent text-grays-900;
-  @apply dark:text-grays-100;
+  @apply bg-transparent text-em;
 }
 
 button.primary {
-  @apply bg-light-a b-light-a;
-  @apply dark:bg-dark-a dark:b-dark-a;
+  @apply bg-a b-a;
 }
 
 button.primary:hover {
-  @apply bg-transparent text-light-a;
-  @apply dark:text-dark-a;
+  @apply bg-transparent text-a;
 }
 
 button.secondary {
-  @apply bg-light-b b-light-b;
-  @apply dark:bg-dark-b dark:b-dark-b;
+  @apply bg-b b-b;
 }
 
 button.secondary:hover {
-  @apply bg-transparent text-light-b;
-  @apply dark:text-dark-b;
+  @apply bg-transparent text-b;
 }
 
 button.accent {
-  @apply bg-light-c b-light-c;
-  @apply dark:bg-dark-c dark:b-dark-c;
+  @apply bg-c b-c;
 }
 
 button.accent:hover {
-  @apply bg-transparent text-light-c;
-  @apply dark:text-dark-c;
+  @apply bg-transparent text-c;
 }

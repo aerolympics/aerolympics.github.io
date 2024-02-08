@@ -1,10 +1,13 @@
 <script>
+  import { Nav } from '$lib'
   import { dark } from '$lib/stores.js'
 </script>
 
 <svelte:head>
   <title>Aerolympics</title>
 </svelte:head>
+
+<Nav />
 
 <div class="screen flex items-center justify-center">
   <div class="w-[65ch]">
