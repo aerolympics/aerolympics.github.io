@@ -1,12 +1,12 @@
 :root {
-  @apply font-body font-300 leading-[1.5] text-light-fg;
-  @apply @dark:text-dark-fg;
+  @apply font-body font-300 leading-[1.5] text-grays-800;
+  @apply @dark:text-grays-200;
 }
 
 html,
 body {
-  @apply bg-light-bg;
-  @apply @dark:bg-dark-bg;
+  @apply bg-grays-white;
+  @apply @dark:bg-grays-black;
 }
 
 h1,
@@ -15,7 +15,8 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-head font-800 uppercase;
+  @apply font-head font-800 uppercase text-grays-black;
+  @apply @dark:text-grays-white;
 }
 
 h1 {
@@ -32,7 +33,8 @@ h3 {
 
 em,
 strong {
-  @apply font-600;
+  @apply font-600 text-grays-900;
+  @apply @dark:text-grays-100;
 }
 
 a {
@@ -46,11 +48,41 @@ a:hover {
 }
 
 button {
-  @apply font-inherit font-600 text-size-inherit py-3 px-5 cursor-pointer bg-light-a text-light-bg b-none rounded transition-colors;
-  @apply @dark:bg-transparent @dark:text-dark-a @dark:b-dark-a @dark:b-solid;
+  @apply font-inherit font-600 text-size-inherit py-3 px-5 cursor-pointer bg-grays-black text-grays-white b-solid b-grays-black rounded transition-colors;
+  @apply @dark:bg-transparent @dark:text-grays-white @dark:b-grays-white;
 }
 
 button:hover {
-  @apply bg-light-a/80;
-  @apply @dark:bg-dark-a @dark:text-dark-bg @dark:b-dark-a @dark:b-solid;
+  @apply bg-transparent text-grays-black;
+  @apply @dark:bg-grays-white @dark:text-grays-black;
+}
+
+button.primary {
+  @apply bg-light-a b-light-a;
+  @apply @dark:bg-transparent @dark:text-dark-a @dark:b-dark-a;
+}
+
+button.primary:hover {
+  @apply bg-transparent text-light-a;
+  @apply @dark:bg-dark-a @dark:text-grays-black;
+}
+
+button.secondary {
+  @apply bg-light-b b-light-b;
+  @apply @dark:bg-transparent @dark:text-dark-b @dark:b-dark-b;
+}
+
+button.secondary:hover {
+  @apply bg-transparent text-light-b;
+  @apply @dark:bg-dark-b @dark:text-grays-black;
+}
+
+button.accent {
+  @apply bg-light-c b-light-c;
+  @apply @dark:bg-transparent @dark:text-dark-c @dark:b-dark-c;
+}
+
+button.accent:hover {
+  @apply bg-transparent text-light-c;
+  @apply @dark:bg-dark-c @dark:text-grays-black;
 }

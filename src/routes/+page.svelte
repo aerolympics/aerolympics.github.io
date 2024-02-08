@@ -13,6 +13,11 @@
       laborum.
     </p>
     <p><a href="https://google.com" target="_blank">Link</a></p>
-    <button>Click me</button>
+    <div class="flex gap-4">
+      <button>Click me</button>
+      <button class="primary">Click me</button>
+      <button class="secondary">Click me</button>
+      <button class="accent">Click me</button>
+    </div>
   </div>
 </div>
