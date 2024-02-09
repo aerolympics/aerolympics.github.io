@@ -10,10 +10,10 @@
   let menu = false
   let isMd = true
   let ignore = []
-
   let { useResizeObserver, entries } = createResizeObserver()
-  let x0 = 0
-  $: if (browser) x0 = $entries[0]?.contentRect.width * (menu * 2 - 1)
+  $: x0 = $entries[0]?.contentRect.width * (menu * 2 - 1)
+  $: x1 = $entries[1]?.contentRect.width
+  $: y2 = $entries[2]?.contentRect.height
 
   if (browser) {
     let m = matchMedia(`(min-width: 768px)`)
@@ -89,8 +89,9 @@
           {#key $dark}
             <div
               class="{$dark ? 'i-ion-moon' : 'i-ion-sunny'} grid-item"
-              in:fly={{ x: 50 }}
-              out:fly={{ x: -50 }}
+              use:useResizeObserver
+              in:fly={{ x: x1 }}
+              out:fly={{ x: -x1 }}
             />
           {/key}
         </button>
@@ -99,7 +100,12 @@
           for="dark"
         >
           {#key $dark}
-            <span class="grid-item" in:fly={{ y: -10 }} out:fly={{ y: 10 }}>
+            <span
+              class="grid-item"
+              use:useResizeObserver
+              in:fly={{ y: -y2 }}
+              out:fly={{ y: y2 }}
+            >
               {$dark ? 'Dark' : 'Light'} Mode
             </span>
           {/key}
