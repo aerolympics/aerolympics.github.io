@@ -1,7 +1,6 @@
 <script>
   import { createResizeObserver, useClickOutside } from '@grail-ui/svelte'
   import { fade, fly, slide } from 'svelte/transition'
-  import { presetMini } from 'unocss'
 
   import { browser } from '$app/environment'
   import { dark } from '$lib/stores.js'
@@ -9,7 +8,6 @@
   export let sticky = false
 
   let menu = false
-  let { md } = presetMini().theme.breakpoints
   let isMd = true
   let ignore = []
 
@@ -18,7 +16,7 @@
   $: if (browser) x0 = $entries[0]?.contentRect.width * (menu * 2 - 1)
 
   if (browser) {
-    let m = matchMedia(`(min-width: ${md})`)
+    let m = matchMedia(`(min-width: 768px)`)
     isMd = m.matches
     m.addEventListener('change', e => {
       isMd = e.matches
