@@ -30,6 +30,6 @@
   }
 </script>
 
-<main class="{loaded ? 'opacity-100' : 'opacity-0'} ofade-400">
+<main class="{loaded ? 'opacity-100' : 'opacity-0'} ofade-400 inline-block">
   <slot />
 </main>

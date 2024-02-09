@@ -6,6 +6,8 @@
   import { browser } from '$app/environment'
   import { dark } from '$lib/stores.js'
 
+  export let sticky = false
+
   let menu = false
   let { md } = presetMini().theme.breakpoints
   let isMd = true
@@ -29,7 +31,9 @@
 {/if}
 
 <nav
-  class="fixed inset-x-0 top-0 flex flex-(items-center) b-(x-0 t-0 grays-100 solid) bg-grays-white p-3 dark:(b-grays-900 bg-black) lg:px-13 md:(px-8 py-1)"
+  class="{sticky
+    ? 'sticky'
+    : 'fixed'} inset-x-0 top-0 flex flex-(items-center) b-(x-0 t-0 grays-100 solid) bg-grays-white p-3 dark:(b-grays-900 bg-black) lg:px-13 md:(px-8 py-1)"
 >
   <h1 class="m-(0 t-1) h-8">
     <a class="h-full" href="/">
