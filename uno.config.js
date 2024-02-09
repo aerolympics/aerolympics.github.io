@@ -1,5 +1,6 @@
 import extractorSvelte from '@unocss/extractor-svelte'
 import {
+  presetIcons,
   presetUno,
   presetWebFonts,
   transformerDirectives,
@@ -46,6 +47,7 @@ export default {
   },
   presets: [
     presetUno({ dark: 'class' }),
+    presetIcons(),
     presetWebFonts({
       provider: 'google',
       fonts: {

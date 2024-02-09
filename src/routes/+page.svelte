@@ -10,7 +10,7 @@
 <Nav />
 
 <div class="screen flex items-center justify-center">
-  <div class="w-[65ch]">
+  <div class="max-w-[65ch] w-full">
     <h1>Testing Testing 123</h1>
     <h2>Testing Testing 123</h2>
     <h3>Testing Testing 123</h3>
@@ -24,12 +24,8 @@
       laborum.
     </p>
     <p><a href="https://google.com" target="_blank">Link</a></p>
-    <div class="flex gap-4">
-      <button
-        on:click={() => {
-          $dark = !$dark
-        }}>Click me</button
-      >
+    <div class="flex flex-wrap gap-4">
+      <button>Click me</button>
       <button class="primary">Click me</button>
       <button class="secondary">Click me</button>
       <button class="accent">Click me</button>

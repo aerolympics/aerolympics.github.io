@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@grail-ui/svelte':
+    specifier: ^0.11.0
+    version: 0.11.0(svelte@4.2.10)
+  '@iconify-json/ion':
+    specifier: ^1.1.15
+    version: 1.1.15
   '@sveltejs/adapter-static':
     specifier: ^3.0.1
     version: 3.0.1(@sveltejs/kit@2.5.0)
@@ -26,9 +32,6 @@ devDependencies:
   '@unocss/postcss':
     specifier: ^0.58.4
     version: 0.58.5(postcss@8.4.34)
-  '@unocss/preset-mini':
-    specifier: ^0.58.4
-    version: 0.58.5
   '@unocss/reset':
     specifier: ^0.58.4
     version: 0.58.5
@@ -63,7 +66,7 @@ devDependencies:
     specifier: ^5.0.0
     version: 5.3.3
   unocss:
-    specifier: ^0.58.4
+    specifier: ^0.58.5
     version: 0.58.5(postcss@8.4.34)(vite@5.0.12)
   vite:
     specifier: ^5.0.3
@@ -686,6 +689,33 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@floating-ui/core@1.6.0:
+    resolution: {integrity: sha512-PcF++MykgmTj3CIyOQbKA/hDzOAiqI3mhuoN44WRCopIs1sgoDoU4oty4Jtqaj/y3oDU6fnVSm4QG0a3t5i0+g==}
+    dependencies:
+      '@floating-ui/utils': 0.2.1
+    dev: true
+
+  /@floating-ui/dom@1.6.1:
+    resolution: {integrity: sha512-iA8qE43/H5iGozC3W0YSnVSW42Vh522yyM1gj+BqRwVsTNOyr231PsXDaV04yT39PsO0QL2QpbI/M0ZaLUQgRQ==}
+    dependencies:
+      '@floating-ui/core': 1.6.0
+      '@floating-ui/utils': 0.2.1
+    dev: true
+
+  /@floating-ui/utils@0.2.1:
+    resolution: {integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==}
+    dev: true
+
+  /@grail-ui/svelte@0.11.0(svelte@4.2.10):
+    resolution: {integrity: sha512-aGM31elY6HkwKPN7qgYKPwllkMhYMvRZIj40NR2egYU+o54dwsz3BVN27M13/Z9ipEo+DTCw9bC7En+tTyrC3w==}
+    peerDependencies:
+      svelte: 3.x
+    dependencies:
+      '@floating-ui/dom': 1.6.1
+      focus-trap: 7.5.4
+      svelte: 4.2.10
+    dev: true
+
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
     engines: {node: '>=10.10.0'}
@@ -704,6 +734,12 @@ packages:
 
   /@humanwhocodes/object-schema@2.0.2:
     resolution: {integrity: sha512-6EwiSjwWYP7pTckG6I5eyFANjPhmPjUX9JRLUSfNPC7FX7zK9gyZAfUEaECL6ALTpGX5AjnBq3C9XmVWPitNpw==}
+    dev: true
+
+  /@iconify-json/ion@1.1.15:
+    resolution: {integrity: sha512-ouEW3wypJCwv9pB6b5k7f2cRMXKSCuxn23S1e9TjJLXXWCF45Juyjls5olrnSRNqYdZise7ZLSojgM8/2kaDtA==}
+    dependencies:
+      '@iconify/types': 2.0.0
     dev: true
 
   /@iconify/types@2.0.0:
@@ -2275,6 +2311,12 @@ packages:
     resolution: {integrity: sha512-36yxDn5H7OFZQla0/jFJmbIKTdZAQHngCedGxiMmpNfEZM0sdEeT+WczLQrjK6D7o2aiyLYDnkw0R3JK0Qv1RQ==}
     dev: true
 
+  /focus-trap@7.5.4:
+    resolution: {integrity: sha512-N7kHdlgsO/v+iD/dMoJKtsSqs5Dz/dXZVebRgJw23LDk+jMi/974zyiOYDziY2JPp8xivq9BmUGwIJMiuSBi7w==}
+    dependencies:
+      tabbable: 6.2.0
+    dev: true
+
   /for-each@0.3.3:
     resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
     dependencies:
@@ -3696,6 +3738,10 @@ packages:
     dependencies:
       '@pkgr/core': 0.1.1
       tslib: 2.6.2
+    dev: true
+
+  /tabbable@6.2.0:
+    resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
     dev: true
 
   /table@6.8.1:

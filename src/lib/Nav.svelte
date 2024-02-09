@@ -1,9 +1,31 @@
 <script>
+  import { useClickOutside } from '@grail-ui/svelte'
+  import { fade, fly, slide } from 'svelte/transition'
+  import { presetMini } from 'unocss'
+
+  import { browser } from '$app/environment'
   import { dark } from '$lib/stores.js'
+
+  let menu = false
+  let { md } = presetMini().theme.breakpoints
+  let isMd = true
+  let ignore = []
+
+  if (browser) {
+    let m = matchMedia(`(min-width: ${md})`)
+    isMd = m.matches
+    m.addEventListener('change', e => {
+      isMd = e.matches
+    })
+  }
 </script>
 
+{#if menu && !isMd}
+  <div class="fixed inset-0 screen bg-black opacity-69" transition:fade />
+{/if}
+
 <nav
-  class="fixed inset-x-0 top-0 flex flex-items-center b-(x-0 t-0 grays-100 solid) bg-grays-white px-13 py-1 dark:(b-grays-900 bg-black)"
+  class="fixed inset-x-0 top-0 flex flex-(items-center) b-(x-0 t-0 grays-100 solid) bg-grays-white p-3 dark:(b-grays-900 bg-black) lg:px-13 md:(px-8 py-1)"
 >
   <h1 class="m-(0 t-1) h-8">
     <a class="h-full" href="/">
@@ -14,15 +36,72 @@
       />
     </a>
   </h1>
-  <ul class="ml-auto flex gap-8">
-    <li><a href="/product">Product</a></li>
-    <li><a href="/news">News</a></li>
-    <li><a href="/contact">Contact</a></li>
-  </ul>
+
+  <button
+    bind:this={ignore[0]}
+    class="text-fg ml-auto b-none p-1 text-8 md:hidden bg-transparent!"
+    aria-label="Menu"
+    on:click={() => {
+      menu = !menu
+    }}
+  >
+    <div class="i-ion-menu" />
+  </button>
+
+  {#if menu || isMd}
+    <ul
+      class="lt-md:bg-bg flex gap-3 lt-md:(absolute top-100% m-0 ml--3 w-full flex-col b-b-3 b-b-grays-100 b-b-solid px-6 pb-8 pt-3 text-right dark:b-b-grays-900) md:(ml-auto gap-8 flex-items-center)"
+      use:useClickOutside={{
+        handler() {
+          menu = false
+        },
+        ignore,
+      }}
+      transition:slide
+    >
+      <!-- TODO: change routes -->
+      <li><a href="/">Product</a></li>
+      <li><a href="/">News</a></li>
+      <li><a href="/">Contact</a></li>
+
+      <li class="flex flex-items-center lt-md:ml-auto">
+        <button
+          id="dark"
+          class="primary grid overflow-hidden p-1"
+          aria-label="{$dark ? 'Dark' : 'Light'} mode"
+          on:click={() => {
+            $dark = !$dark
+          }}
+        >
+          {#key $dark}
+            <div
+              class="{$dark ? 'i-ion-moon' : 'i-ion-sunny'} grid-item"
+              in:fly={{ x: 50 }}
+              out:fly={{ x: -50 }}
+            />
+          {/key}
+        </button>
+        <label
+          class="inline-grid ml-3 cursor-pointer font-600 md:hidden"
+          for="dark"
+        >
+          {#key $dark}
+            <span class="grid-item" in:fly={{ y: -10 }} out:fly={{ y: 10 }}>
+              {$dark ? 'Dark' : 'Light'} Mode
+            </span>
+          {/key}
+        </label>
+      </li>
+    </ul>
+  {/if}
 </nav>
 
 <style>
   a {
-    --at-apply: decoration-none font-600;
+    --at-apply: decoration-none font-600 text-fg;
+  }
+
+  .grid-item {
+    grid-area: 1/1/2/2;
   }
 </style>
