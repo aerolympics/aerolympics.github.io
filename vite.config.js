@@ -1,6 +1,7 @@
 import { sveltekit } from '@sveltejs/kit/vite'
 import unocss from 'unocss/vite'
+import { imagetools } from 'vite-imagetools'
 
 export default {
-  plugins: [unocss(), sveltekit()],
+  plugins: [imagetools(), unocss(), sveltekit()],
 }

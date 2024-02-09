@@ -45,7 +45,7 @@
 
   <button
     bind:this={ignore[0]}
-    class="text-fg grid ml-auto b-none p-1 text-8 md:hidden bg-transparent!"
+    class="grid ml-auto b-none p-1 text-8 md:hidden bg-transparent! text-fg"
     aria-label="{menu ? 'Close' : 'Open'} nav menu"
     on:click={() => {
       menu = !menu
@@ -63,7 +63,7 @@
 
   {#if menu || isMd}
     <ul
-      class="lt-md:bg-bg flex gap-3 lt-md:(absolute top-100% m-0 ml--3 w-full flex-col b-b-3 b-b-grays-100 b-b-solid px-6 pb-8 pt-3 text-right dark:b-b-grays-900) md:(ml-auto gap-8 flex-items-center)"
+      class="flex gap-3 lt-md:(absolute top-100% m-0 ml--3 w-full flex-col b-b-3 b-b-grays-100 b-b-solid bg-bg px-6 pb-8 pt-3 text-right dark:b-b-grays-900) md:(ml-auto gap-8 flex-items-center)"
       use:useClickOutside={{
         handler() {
           menu = false

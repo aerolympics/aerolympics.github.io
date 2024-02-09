@@ -1,5 +1,6 @@
 <script>
   import { browser } from '$app/environment'
+  import { Favicons } from '$lib'
   import { dark } from '$lib/stores.js'
   import '@unocss/reset/sanitize/sanitize.css'
   import '@unocss/reset/sanitize/assets.css'
@@ -29,6 +30,8 @@
     })
   }
 </script>
+
+<Favicons />
 
 <main class="{loaded ? 'opacity-100' : 'opacity-0'} ofade-400 inline-block">
   <slot />
