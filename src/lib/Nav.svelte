@@ -1,5 +1,5 @@
 <script>
-  import { useClickOutside } from '@grail-ui/svelte'
+  import { useClickOutside, createResizeObserver } from '@grail-ui/svelte'
   import { fade, fly, slide } from 'svelte/transition'
   import { presetMini } from 'unocss'
 
@@ -10,6 +10,10 @@
   let { md } = presetMini().theme.breakpoints
   let isMd = true
   let ignore = []
+
+  let { useResizeObserver, entries } = createResizeObserver()
+  let x0 = 0
+  $: if (browser) x0 = $entries[0]?.contentRect.width * (menu * 2 - 1)
 
   if (browser) {
     let m = matchMedia(`(min-width: ${md})`)
@@ -39,13 +43,20 @@
 
   <button
     bind:this={ignore[0]}
-    class="text-fg ml-auto b-none p-1 text-8 md:hidden bg-transparent!"
-    aria-label="Menu"
+    class="text-fg grid ml-auto b-none p-1 text-8 md:hidden bg-transparent!"
+    aria-label="{menu ? 'Close' : 'Open'} nav menu"
     on:click={() => {
       menu = !menu
     }}
   >
-    <div class="i-ion-menu" />
+    {#key menu}
+      <div
+        class="{menu ? 'i-ion-close' : 'i-ion-menu'} grid-item"
+        use:useResizeObserver
+        in:fly={{ x: x0 }}
+        out:fly={{ x: -x0 }}
+      />
+    {/key}
   </button>
 
   {#if menu || isMd}
