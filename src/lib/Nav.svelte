@@ -1,5 +1,5 @@
 <script>
-  import { useClickOutside, createResizeObserver } from '@grail-ui/svelte'
+  import { createResizeObserver, useClickOutside } from '@grail-ui/svelte'
   import { fade, fly, slide } from 'svelte/transition'
   import { presetMini } from 'unocss'
 
